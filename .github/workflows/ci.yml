@@ -31,23 +31,23 @@ jobs:
       # 2. Static analysis
       - name: Static analysis with flake8
         run: |
-          flake8 mkdocs_cdoc
+          python -m flake8 mkdocs_cdoc
 
       - name: Static analysis with pylint
         run: |
-          pylint mkdocs_cdoc --errors-only
+          python -m pylint mkdocs_cdoc --errors-only
 
       # 3. Unit and integration tests
       - name: Run pytest tests
         run: |
-          pytest tests
+          python -m pytest tests
 
       # 4. Coverage report
       - name: Generate coverage report
         run: |
-          pytest tests --cov=mkdocs_cdoc --cov-report=term-missing
+          python -m pytest tests --cov=mkdocs_cdoc --cov-report=term-missing
 
       # 5. Build validation
       - name: Validate MkDocs build
         run: |
-          mkdocs build -f example/mkdocs.yml
+          python -m mkdocs build -f example/mkdocs.yml
