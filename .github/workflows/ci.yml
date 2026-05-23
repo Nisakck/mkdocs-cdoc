@@ -45,7 +45,7 @@ jobs:
       # 4. Coverage report
       - name: Generate coverage report
         run: |
-          python -m pytest tests --cov=mkdocs_cdoc --cov-report=term-missing
+          python -m pytest tests --cov=mkdocs_cdoc --cov-report=term-missing --cov-fail-under=55
 
       # 5. Build validation
       - name: Validate MkDocs build
